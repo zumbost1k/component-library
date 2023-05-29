@@ -5,7 +5,6 @@ const iconTypeCheker = (icon, color, size) => {
     if (icon === 'left_chat' && color === 'primary') {
         if (size !== "small") { return 'left_chat_primary' }
         else { return 'left_chat_primary_small' }
-
     }
     if (icon === 'right_arrow' && color === 'primary') {
         if (size !== "small") { return 'right_arrow_primary' }
