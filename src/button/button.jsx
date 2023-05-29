@@ -1,5 +1,5 @@
 import React from "react"
-import './buttons.css'
+import './button.css'
 
 const iconTypeCheker = (icon, color, size) => {
     if (icon === 'left_chat' && color === 'primary') {
