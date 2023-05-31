@@ -4,6 +4,7 @@ import arrow from "../icons/arrow.svg"
 import chat from "../icons/chat.svg"
 const iconTypeCheker = (icon, color, size) => {
     if (icon === 'left_chat' && color === 'primary') {
+        if (size === "large") { return 'left_chat_primary_large' }
         if (size !== "small") { return 'left_chat_primary' }
         else { return 'left_chat_primary_small' }
     }
@@ -16,6 +17,7 @@ const iconTypeCheker = (icon, color, size) => {
         else { return 'center_chat_primary_small' }
     }
     if (icon === 'left_chat') {
+        if (size === "large") { return 'left_chat_large' }
         if (size !== "small") { return 'left_chat' }
         else { return 'left_chat_small' }
     }
