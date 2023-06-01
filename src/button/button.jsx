@@ -45,7 +45,7 @@ const Button = (props) => {
 
     return (
         <div>
-            <button className={className} disabled={isDisable}>{svgChecker(props.icon, props.size, props.color)}{`${props.size} + ${props.color}`}</button>
+            <button className={className} disabled={isDisable}><div className="smt">{svgChecker(props.icon, props.size, props.color)}</div>{`${props.size} + ${props.color}`}</button>
         </div>
     )
 
