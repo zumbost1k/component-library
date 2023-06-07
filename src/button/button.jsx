@@ -2,7 +2,7 @@ import React from 'react'
 import './button.css'
 
 const Button = ({ color, size, IconClass, type, disabled, iconType }) => {
-    const className = `button ${color} ${size} `
+    const className = ['button',color,size].filter(Boolean).join(' ')
     return (
         <div >
             <button className={className} disabled={disabled}>
