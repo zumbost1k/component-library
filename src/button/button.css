@@ -1,11 +1,23 @@
-button {
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.text {
+    white-space: nowrap;    
+}
+
+.button {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 16px;
-    line-height: 16px;
+    line-height: 24px;
     position: relative;
     border-radius: 48px;
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hidden {
@@ -13,31 +25,18 @@ button {
 }
 
 .block {
-    padding: 16px 103px;
+    width: 327px;
+    height: 48px;
 }
 
 .large {
-    padding: 16px 32px;
+    width: 220px;
+    height: 48px;
 }
 
 .small {
-    padding: 8px 16px;
-}
-
-.large_with_icon_left {
-    padding: 16px 32px 16px 64px;
-}
-
-.large_with_icon_right {
-    padding: 16px 64px 16px 32px;
-}
-
-.small_with_icon_left {
-    padding: 8px 16px 8px 32px;
-}
-
-.small_with_icon_right {
-    padding: 8px 32px 8px 16px;
+    width: 190px;
+    height: 32px;
 }
 
 .primary {
@@ -108,44 +107,16 @@ button {
 }
 
 
-.left_chat {
+.left {
     position: absolute;
-    left: 5%;
-    bottom: 12px;
+    left: 16px;
 }
 
-.center_chat_large {
-    position: absolute;
-    left: 15%;
-    bottom: 12px;
+.center {
+   margin-right: 8px;
 }
 
-.center_chat {
+.right {
     position: absolute;
-    left: 20%;
-    bottom: 12px;
-}
-
-.right_arrow {
-    position: absolute;
-    right: 5%;
-    bottom: 12px;
-}
-
-.left_chat_small {
-    position: absolute;
-    left: 5%;
-    bottom: 4px;
-}
-
-.right_arrow_small {
-    position: absolute;
-    right: 2%;
-    bottom: 4px;
-}
-
-.center_chat_small {
-    position: absolute;
-    left: 5%;
-    bottom: 4px;
+    right: 16px;
 }

@@ -1,0 +1,15 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.body {
+    display: inline-flex;
+}
+
+.item {
+    border: 1px solid black;
+    padding: 50px;
+    position: relative;
+}
