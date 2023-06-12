@@ -13,11 +13,11 @@ function App() {
   const [color, setColor] = useState('primary')
   const [icon, setIcon] = useState('')
   const [disabled, setDisabled] = useState(false)
-  const [iconType, setIconType] = useState('')
+  const [iconPosition, setIconPosition] = useState('right')
   return (
     <div className='body' >
       <div className='item'>
-        <Button color={color} size={size} IconClass={icons[icon]} type={icon} disabled={disabled === 'true'} iconType={iconType}/>
+        <Button color={color} size={size} Icon={icons[icon]} iconPosition={iconPosition} disabled={disabled} />
         <br />
         <form className='myForm'>
           <select onChange={newSize => { setSize(newSize.target.value) }}>
@@ -25,14 +25,17 @@ function App() {
             <option value='large'>large</option>
             <option value='small'>small</option>
           </select>
+          <select onChange={newPosition => { setIconPosition(newPosition.target.value) }}>
+            <option value='right'>right</option>
+            <option value='left'>left</option>
+            <option value='center'>center</option>
+          </select>
           <select onChange={newIcon => {
             setIcon(newIcon.target.value)
-            setIconType(newIcon.target.options[newIcon.target.selectedIndex].getAttribute('type') )
           }}>
             <option value='' type=''>no icon</option>
-            <option value='chatIcon' type='left'>left</option>
-            <option value='chatIcon' type='center'>center</option>
-            <option value='arrowIcon' type='right'>right</option>
+            <option value='arrowIcon'>arrow</option>
+            <option value='chatIcon'>chat</option>
           </select>
           <select onChange={newColor => { setColor(newColor.target.value) }}>
             <option value='primary'>primary</option>
@@ -40,14 +43,12 @@ function App() {
             <option value='outline'>outline</option>
             <option value='transparent'>transparent</option>
           </select>
-          <select onChange={newDisabled => { setDisabled(newDisabled.target.value) }}>
-            <option value={false}>no disable</option>
-            <option value={true}>disable</option>
+          <select onChange={newDisabled => { setDisabled(newDisabled.target.value === 'true') }}>
+            <option value='false'>no disable</option>
+            <option value='true'>disable</option>
           </select>
         </form>
       </div>
-
-
     </div>
 
   );

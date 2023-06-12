@@ -4,8 +4,21 @@
     box-sizing: border-box;
 }
 
-.text {
-    white-space: nowrap;    
+.textcenter{
+    white-space: nowrap;
+    order: 2;
+}
+
+.textright {
+    order: 2;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+.textleft {
+    order: 2;
+    white-space: nowrap;
+    margin-right: auto;
 }
 
 .button {
@@ -15,7 +28,7 @@
     line-height: 24px;
     position: relative;
     border-radius: 48px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -108,15 +121,17 @@
 
 
 .left {
-    position: absolute;
+    margin-right: auto;
+    order: 1;
     left: 16px;
 }
 
 .center {
-   margin-right: 8px;
+    order: 1;
 }
 
 .right {
-    position: absolute;
-    right: 16px;
+    margin-left: auto;
+    order: 3;
+    margin-right: 16px;
 }
