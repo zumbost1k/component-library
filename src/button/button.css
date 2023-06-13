@@ -1,0 +1,137 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.textcenter{
+    white-space: nowrap;
+    order: 2;
+}
+
+.textright {
+    order: 2;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+.textleft {
+    order: 2;
+    white-space: nowrap;
+    margin-right: auto;
+}
+
+.button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    position: relative;
+    border-radius: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.block {
+    width: 327px;
+    height: 48px;
+}
+
+.large {
+    width: 220px;
+    height: 48px;
+}
+
+.small {
+    width: 190px;
+    height: 32px;
+}
+
+.primary {
+    background-color: #6B4EFF;
+    color: white;
+    border: 0px;
+}
+
+.primary:hover {
+    cursor: pointer;
+    background: #5538EE;
+}
+
+.primary:disabled {
+    background: #E3E5E6;
+    color: #979C9E;
+}
+
+
+.secondary {
+    background: #E7E7FF;
+    color: #6B4EFF;
+    border: 0px;
+}
+
+.secondary:hover {
+    cursor: pointer;
+    background: #C6C4FF;
+    color: #5538EE;
+}
+
+.secondary:disabled {
+    background: #E3E5E6;
+    color: #979C9E;
+}
+
+.outline {
+    color: #6B4EFF;
+    border: 1px solid #6B4EFF;
+    background-color: white;
+}
+
+.outline:hover {
+    cursor: pointer;
+    color: #5538EE;
+    border: 1px solid #5538EE;
+}
+
+.outline:disabled {
+    border: 1px solid #CDCFD0;
+    color: #CDCFD0;
+}
+
+.transparent {
+    border: 0px;
+    color: #6B4EFF;
+    background-color: white;
+}
+
+.transparent:hover {
+    cursor: pointer;
+    background: #E7E7FF;
+    color: #6B4EFF;
+}
+
+.transparent:disabled {
+    color: #CDCFD0;
+}
+
+
+.left {
+    margin-right: auto;
+    order: 1;
+    left: 16px;
+}
+
+.center {
+    order: 1;
+}
+
+.right {
+    margin-left: auto;
+    order: 3;
+    margin-right: 16px;
+}
