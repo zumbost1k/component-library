@@ -7,7 +7,7 @@ const Button = ({ color, size, Icon, iconPosition, disabled }) => {
         <div >
             <button className={className} disabled={disabled}>
                 {Icon && <Icon className={iconPosition} />}
-                <div className={Icon && 'text'+iconPosition}>{`${size} + ${color}`}</div>
+                <div className={Icon && 'text' + iconPosition}>{`${size} + ${color}`}</div>
 
 
             </button>

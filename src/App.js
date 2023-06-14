@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Button from './button/button';
 import Chat from './icons/chat';
 import Arrow from './icons/arrow';
 import './app.css'
+import Input from "./input/input";
 
 function App() {
   const icons = {
@@ -14,6 +15,16 @@ function App() {
   const [icon, setIcon] = useState('')
   const [disabled, setDisabled] = useState(false)
   const [iconPosition, setIconPosition] = useState('right')
+  const [inputItem, setInputItem] = useState('')
+  const [inputDisabled, setInputDisabled] = useState(false)
+  const [value, setValue] = useState('')
+  const isError = useMemo(() => {
+    if (value.length < 20) {
+      return false
+    }
+    else { return true }
+  }, [value]
+  )
   return (
     <div className='body' >
       <div className='item'>
@@ -46,6 +57,22 @@ function App() {
           <select onChange={newDisabled => { setDisabled(newDisabled.target.value === 'true') }}>
             <option value='false'>no disable</option>
             <option value='true'>disable</option>
+          </select>
+        </form>
+      </div>
+      <div className="item">
+        <Input value={value} setValue={setValue} error={isError} inputItem={inputItem} disabled={inputDisabled} />
+        <br />
+        <form className="myForm">
+          <select onChange={newInputItem => { setInputItem(newInputItem.target.value) }}>
+            <option value="">nothing</option>
+            <option value="label">text Label</option>
+            <option value="caption">caption</option>
+            <option value="both">caption+label</option>
+          </select>
+          <select onChange={newDisabled => { setInputDisabled(newDisabled.target.value === 'true') }}>
+            <option value={'false'}>no disable</option>
+            <option value={'true'}>disable</option>
           </select>
         </form>
       </div>
