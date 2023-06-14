@@ -9,7 +9,7 @@ const Input = ({ value, setValue, error, inputItem, disabled }) => {
         <div className='input'>
             <div className={typeCheker('label', inputItem)} />
             <input className={error && 'errorState'} type='text' placeholder='Placeholder text' disabled={disabled} value={value} onInput={e => setValue(e.target.value)} />
-            {(error || typeCheker('caption', inputItem) !== 'hidden') && (error ? <div className='error'>Error Message</div> : <div className='caption' />)}
+            {(error || typeCheker('caption', inputItem) !== 'hidden') && (error ? <div className='error' /> : <div className='caption' />)}
         </div>
     )
 }

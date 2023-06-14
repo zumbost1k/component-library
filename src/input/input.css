@@ -52,7 +52,10 @@ input:disabled {
     color: #FF5247;
 }
 
+.error::after{
+    content: "Error Message";
+}
+
 .caption::after {
     content: "Caption";
-
 }
