@@ -3,7 +3,7 @@ import Button from './button/button';
 import Chat from './icons/chat';
 import Arrow from './icons/arrow';
 import './app.css'
-import Input from "./input/input";
+import Input from './input/input';
 
 function App() {
   const icons = {
@@ -60,19 +60,19 @@ function App() {
           </select>
         </form>
       </div>
-      <div className="item">
+      <div className='item'>
         <Input value={value} setValue={setValue} error={isError} inputItem={inputItem} disabled={inputDisabled} />
         <br />
-        <form className="myForm">
+        <form className='myForm'>
           <select onChange={newInputItem => { setInputItem(newInputItem.target.value) }}>
-            <option value="">nothing</option>
-            <option value="label">text Label</option>
-            <option value="caption">caption</option>
-            <option value="both">caption+label</option>
+            <option value=''>nothing</option>
+            <option value='label'>text Label</option>
+            <option value='caption'>caption</option>
+            <option value='both'>caption+label</option>
           </select>
           <select onChange={newDisabled => { setInputDisabled(newDisabled.target.value === 'true') }}>
-            <option value={'false'}>no disable</option>
-            <option value={'true'}>disable</option>
+            <option value='false'>no disable</option>
+            <option value='true'>disable</option>
           </select>
         </form>
       </div>
