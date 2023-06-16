@@ -15,9 +15,11 @@ function App() {
   const [icon, setIcon] = useState('')
   const [disabled, setDisabled] = useState(false)
   const [iconPosition, setIconPosition] = useState('right')
-  const [inputItem, setInputItem] = useState('')
   const [inputDisabled, setInputDisabled] = useState(false)
   const [value, setValue] = useState('')
+  const [label, setLabel] = useState(false)
+  const [caption, setCaption] = useState(false)
+  const [type, setType] = useState('text')
   const isError = useMemo(() => {
     if (value.length < 20) {
       return false
@@ -61,14 +63,21 @@ function App() {
         </form>
       </div>
       <div className='item'>
-        <Input value={value} setValue={setValue} error={isError} inputItem={inputItem} disabled={inputDisabled} />
+        <Input value={value} setValue={setValue} error={isError} disabled={inputDisabled} label={label} caption={caption} type={type} />
         <br />
         <form className='myForm'>
-          <select onChange={newInputItem => { setInputItem(newInputItem.target.value) }}>
-            <option value=''>nothing</option>
-            <option value='label'>text Label</option>
-            <option value='caption'>caption</option>
-            <option value='both'>caption+label</option>
+          <div>
+            <input type="checkbox" defaultChecked={false} onClick={() => setLabel(!label)} />
+            <label>label</label>
+          </div>
+          <div>
+            <input type="checkbox" defaultChecked={false} onClick={() => setCaption(!caption)} />
+            <label>caption</label>
+          </div>
+          <select onChange={newType => { setType(newType.target.value) }}>
+            <option value='text'>text</option>
+            <option value='email'>email</option>
+            <option value='password'>password</option>
           </select>
           <select onChange={newDisabled => { setInputDisabled(newDisabled.target.value === 'true') }}>
             <option value='false'>no disable</option>
