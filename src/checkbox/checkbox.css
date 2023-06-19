@@ -1,0 +1,73 @@
+.checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 34px;
+}
+
+.checkbox .inputCheckBox {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border: 1px solid white;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 3px;
+    top: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.inputCheckBox:checked+.slider {
+    border: 1px solid #6B4EFF;
+    background-color: #6B4EFF;
+}
+
+.inputCheckBox:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.inputCheckBox:checked:disabled+.slider::before {
+    background-color: #F2F4F5;
+}
+
+.inputCheckBox:disabled+.slider::before {
+    background-color: #E3E5E6;
+}
+
+.inputCheckBox:disabled+.slider {
+    background-color: #FFFFFF;
+    border: 1px solid #E3E5E6;
+}
+
+.inputCheckBox:checked:disabled .slider {
+    background: #E3E5E6;
+}

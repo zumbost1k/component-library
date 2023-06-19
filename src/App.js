@@ -4,6 +4,7 @@ import Chat from './icons/chat';
 import Arrow from './icons/arrow';
 import './app.css'
 import Input from './input/input';
+import CheckBox from './checkbox/checkbox';
 
 function App() {
   const icons = {
@@ -20,6 +21,7 @@ function App() {
   const [label, setLabel] = useState(false)
   const [caption, setCaption] = useState(false)
   const [type, setType] = useState('text')
+  const [isDisabledCheckBox, setIsDisabledCheckBox] = useState(false)
   const isError = useMemo(() => {
     if (value.length < 20) {
       return false
@@ -67,11 +69,11 @@ function App() {
         <br />
         <form className='myForm'>
           <div>
-            <input type="checkbox" defaultChecked={false} onClick={() => setLabel(!label)} />
+            <input type='checkbox' defaultChecked={false} onClick={() => setLabel(!label)} />
             <label>label</label>
           </div>
           <div>
-            <input type="checkbox" defaultChecked={false} onClick={() => setCaption(!caption)} />
+            <input type='checkbox' defaultChecked={false} onClick={() => setCaption(!caption)} />
             <label>caption</label>
           </div>
           <select onChange={newType => { setType(newType.target.value) }}>
@@ -84,6 +86,13 @@ function App() {
             <option value='true'>disable</option>
           </select>
         </form>
+      </div>
+      <div className='item'>
+        <CheckBox isDisable={isDisabledCheckBox} />
+        <div>
+          <input type='checkbox' defaultChecked={false} onClick={() => setIsDisabledCheckBox(!isDisabledCheckBox)} />
+          <label>disabled</label>
+        </div>
       </div>
     </div>
 
