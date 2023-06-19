@@ -22,6 +22,7 @@ function App() {
   const [caption, setCaption] = useState(false)
   const [type, setType] = useState('text')
   const [isDisabledCheckBox, setIsDisabledCheckBox] = useState(false)
+  const [isChecked, setIsChecked] = useState(false)
   const isError = useMemo(() => {
     if (value.length < 20) {
       return false
@@ -29,6 +30,9 @@ function App() {
     else { return true }
   }, [value]
   )
+  const handleCheckBoxChange = () => {
+    setIsChecked(!isChecked);
+  };
   return (
     <div className='body' >
       <div className='item'>
@@ -88,7 +92,8 @@ function App() {
         </form>
       </div>
       <div className='item'>
-        <CheckBox isDisable={isDisabledCheckBox} />
+       <CheckBox isDisable={isDisabledCheckBox} checked={isChecked} onChange={(value) => {setIsChecked(!value)
+         console.log(value)}}/>
         <div>
           <input type='checkbox' defaultChecked={false} onClick={() => setIsDisabledCheckBox(!isDisabledCheckBox)} />
           <label>disabled</label>
