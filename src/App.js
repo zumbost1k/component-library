@@ -4,6 +4,7 @@ import Chat from './icons/chat';
 import Arrow from './icons/arrow';
 import './app.css'
 import Input from './input/input';
+import CheckBox from './checkbox/checkbox';
 
 function App() {
   const icons = {
@@ -20,6 +21,8 @@ function App() {
   const [label, setLabel] = useState(false)
   const [caption, setCaption] = useState(false)
   const [type, setType] = useState('text')
+  const [isDisabledCheckBox, setIsDisabledCheckBox] = useState(false)
+  const [isChecked, setIsChecked] = useState(false)
   const isError = useMemo(() => {
     if (value.length < 20) {
       return false
@@ -84,6 +87,13 @@ function App() {
             <option value='true'>disable</option>
           </select>
         </form>
+      </div>
+      <div className='item'>
+        <CheckBox isDisable={isDisabledCheckBox} checked={isChecked} onChange={setIsChecked}/>
+        <div>
+          <input type='checkbox' defaultChecked={false} onClick={() => setIsDisabledCheckBox(!isDisabledCheckBox)} />
+          <label>disabled</label>
+        </div>
       </div>
     </div>
 
