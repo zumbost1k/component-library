@@ -36,12 +36,12 @@
     transition: .4s;
 }
 
-.inputCheckBox:checked+.slider {
+.checked+.slider {
     border: 1px solid #6B4EFF;
     background-color: #6B4EFF;
 }
 
-.inputCheckBox:checked+.slider:before {
+.checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
@@ -55,7 +55,7 @@
     border-radius: 50%;
 }
 
-.inputCheckBox:checked:disabled+.slider::before {
+.checked:disabled+.slider::before {
     background-color: #F2F4F5;
 }
 
@@ -72,6 +72,6 @@
     background-color: #E3E5E5;
 }
 
-.inputCheckBox:checked:disabled+ .slider {
+.checked:disabled+.slider {
     background: #E3E5E5;
 }

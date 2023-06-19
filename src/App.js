@@ -30,9 +30,6 @@ function App() {
     else { return true }
   }, [value]
   )
-  const handleCheckBoxChange = () => {
-    setIsChecked(!isChecked);
-  };
   return (
     <div className='body' >
       <div className='item'>
@@ -92,8 +89,7 @@ function App() {
         </form>
       </div>
       <div className='item'>
-       <CheckBox isDisable={isDisabledCheckBox} checked={isChecked} onChange={(value) => {setIsChecked(!value)
-         console.log(value)}}/>
+        <CheckBox isDisable={isDisabledCheckBox} checked={isChecked} onChange={setIsChecked}/>
         <div>
           <input type='checkbox' defaultChecked={false} onClick={() => setIsDisabledCheckBox(!isDisabledCheckBox)} />
           <label>disabled</label>
