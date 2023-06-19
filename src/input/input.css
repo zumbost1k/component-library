@@ -1,0 +1,49 @@
+* {
+    font-family: 'Inter';
+}
+
+input {
+    border-radius: 8px;
+    padding: 16px 140px 16px 16px;
+    border: 2px solid #E3E5E5;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #090A0A;
+    outline: none;
+}
+
+input:focus {
+    border: 2px solid #6B4EFF;
+}
+
+.errorState, .errorState:focus {
+    border: 2px solid #FF5247;
+}
+
+input:disabled {
+    background-color: #E3E5E5;
+    color: #CDCFD0;
+}
+
+::placeholder {
+    color: #72777A;
+}
+
+.label {
+    padding-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}   
+
+.caption {
+    padding-top: 12px;
+    font-size: 12px;
+    color: #72777A;
+}
+
+.error {
+    padding-top: 12px;
+    font-size: 12px;
+    color: #FF5247;
+}

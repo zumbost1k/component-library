@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Button from './button/button';
 import Chat from './icons/chat';
 import Arrow from './icons/arrow';
 import './app.css'
+import Input from './input/input';
+import CheckBox from './checkbox/checkbox';
 
 function App() {
   const icons = {
@@ -14,6 +16,20 @@ function App() {
   const [icon, setIcon] = useState('')
   const [disabled, setDisabled] = useState(false)
   const [iconPosition, setIconPosition] = useState('right')
+  const [inputDisabled, setInputDisabled] = useState(false)
+  const [value, setValue] = useState('')
+  const [label, setLabel] = useState(false)
+  const [caption, setCaption] = useState(false)
+  const [type, setType] = useState('text')
+  const [isDisabledCheckBox, setIsDisabledCheckBox] = useState(false)
+  const [isChecked, setIsChecked] = useState(false)
+  const isError = useMemo(() => {
+    if (value.length < 20) {
+      return false
+    }
+    else { return true }
+  }, [value]
+  )
   return (
     <div className='body' >
       <div className='item'>
@@ -48,6 +64,36 @@ function App() {
             <option value='true'>disable</option>
           </select>
         </form>
+      </div>
+      <div className='item'>
+        <Input value={value} setValue={setValue} error={isError} disabled={inputDisabled} label={label} caption={caption} type={type} />
+        <br />
+        <form className='myForm'>
+          <div>
+            <input type='checkbox' defaultChecked={false} onClick={() => setLabel(!label)} />
+            <label>label</label>
+          </div>
+          <div>
+            <input type='checkbox' defaultChecked={false} onClick={() => setCaption(!caption)} />
+            <label>caption</label>
+          </div>
+          <select onChange={newType => { setType(newType.target.value) }}>
+            <option value='text'>text</option>
+            <option value='email'>email</option>
+            <option value='password'>password</option>
+          </select>
+          <select onChange={newDisabled => { setInputDisabled(newDisabled.target.value === 'true') }}>
+            <option value='false'>no disable</option>
+            <option value='true'>disable</option>
+          </select>
+        </form>
+      </div>
+      <div className='item'>
+        <CheckBox isDisable={isDisabledCheckBox} checked={isChecked} onChange={setIsChecked}/>
+        <div>
+          <input type='checkbox' defaultChecked={false} onClick={() => setIsDisabledCheckBox(!isDisabledCheckBox)} />
+          <label>disabled</label>
+        </div>
       </div>
     </div>
 
