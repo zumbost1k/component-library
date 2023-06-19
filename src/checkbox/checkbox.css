@@ -74,4 +74,5 @@
 
 .checked:disabled+.slider {
     background: #E3E5E5;
+    border: 1px solid #E3E5E6;
 }
