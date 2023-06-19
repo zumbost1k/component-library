@@ -67,11 +67,11 @@ function App() {
         <br />
         <form className='myForm'>
           <div>
-            <input type="checkbox" defaultChecked={false} onClick={() => setLabel(!label)} />
+            <input type='checkbox' defaultChecked={false} onClick={() => setLabel(!label)} />
             <label>label</label>
           </div>
           <div>
-            <input type="checkbox" defaultChecked={false} onClick={() => setCaption(!caption)} />
+            <input type='checkbox' defaultChecked={false} onClick={() => setCaption(!caption)} />
             <label>caption</label>
           </div>
           <select onChange={newType => { setType(newType.target.value) }}>
