@@ -68,6 +68,10 @@
     border: 1px solid #E3E5E6;
 }
 
-.inputCheckBox:checked:disabled .slider {
-    background: #E3E5E6;
+.inputCheckBox:disabled+.slider::before {
+    background-color: #E3E5E5;
+}
+
+.inputCheckBox:checked:disabled+ .slider {
+    background: #E3E5E5;
 }
