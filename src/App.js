@@ -5,6 +5,7 @@ import Arrow from './icons/arrow';
 import './app.css'
 import Input from './input/input';
 import CheckBox from './checkbox/checkbox';
+import RadioButtons from './radioButton/radioButton';
 
 function App() {
   const icons = {
@@ -23,6 +24,7 @@ function App() {
   const [type, setType] = useState('text')
   const [isDisabledCheckBox, setIsDisabledCheckBox] = useState(false)
   const [isChecked, setIsChecked] = useState(false)
+  const [isRadioDisabled,setIsRadioDisabled]=useState(false)
   const isError = useMemo(() => {
     if (value.length < 20) {
       return false
@@ -89,11 +91,16 @@ function App() {
         </form>
       </div>
       <div className='item'>
-        <CheckBox isDisable={isDisabledCheckBox} checked={isChecked} onChange={setIsChecked}/>
+        <CheckBox isDisable={isDisabledCheckBox} checked={isChecked} onChange={setIsChecked} />
         <div>
           <input type='checkbox' defaultChecked={false} onClick={() => setIsDisabledCheckBox(!isDisabledCheckBox)} />
           <label>disabled</label>
         </div>
+      </div>
+      <div className='item'>
+        <RadioButtons isDisabled={isRadioDisabled}/>
+        <input type='checkbox' defaultChecked={false} onClick={() => setIsRadioDisabled(!isRadioDisabled)} />
+          <label>disabled</label>
       </div>
     </div>
 
