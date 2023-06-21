@@ -6,6 +6,7 @@ import './app.css'
 import Input from './input/input';
 import CheckBox from './checkbox/checkbox';
 import RadioButtons from './radioButton/radioButton';
+import Checker from './checker/checker';
 
 function App() {
   const icons = {
@@ -24,7 +25,9 @@ function App() {
   const [type, setType] = useState('text')
   const [isDisabledCheckBox, setIsDisabledCheckBox] = useState(false)
   const [isChecked, setIsChecked] = useState(false)
-  const [isRadioDisabled,setIsRadioDisabled]=useState(false)
+  const [isRadioDisabled, setIsRadioDisabled] = useState(false)
+  const [isCheckDisabled, setIsCheckDisabled] = useState(false)
+  const [isCheckedBox, setIsCheckedBox] = useState(false)
   const isError = useMemo(() => {
     if (value.length < 20) {
       return false
@@ -98,9 +101,21 @@ function App() {
         </div>
       </div>
       <div className='item'>
-        <RadioButtons isDisabled={isRadioDisabled}/>
+        <RadioButtons isDisabled={isRadioDisabled} />
         <input type='checkbox' defaultChecked={false} onClick={() => setIsRadioDisabled(!isRadioDisabled)} />
+        <label>disabled</label>
+      </div>
+      <div className='item'>
+        <Checker isDisabled={isCheckDisabled} checked={isCheckedBox} onChange={setIsCheckedBox} />
+        <div>
+          <input type='checkbox' value={isCheckedBox} defaultChecked={false} onClick={() => setIsCheckedBox(!isCheckedBox)} />
+          <label>checked</label>
+        </div>
+        <div>
+          <input type='checkbox' defaultChecked={false} onClick={() => setIsCheckDisabled(!isCheckDisabled)} />
           <label>disabled</label>
+        </div>
+
       </div>
     </div>
 
