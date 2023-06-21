@@ -1,0 +1,70 @@
+.modal-window {
+    width: 327px;
+    height: 270px;
+    background-color: white;
+    border-radius: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.remove {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #090A0A;
+    margin: 0;
+    padding-top: 24px;
+}
+
+.common {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #72777A;
+    padding: 8px 24px;
+    margin: 0;
+}
+
+.sure {
+    margin-top: 24px;
+    background: #6B4EFF;
+    border-radius: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+}
+
+.sure-text {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #FFFFFF;
+    padding: 16px 120px;
+}
+
+.thanks {
+    margin-top: 24px;
+    border: 0;
+    background-color: white;
+}
+
+.thanks-text {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #6B4EFF;
+}

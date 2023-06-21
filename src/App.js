@@ -7,6 +7,7 @@ import Input from './input/input';
 import CheckBox from './checkbox/checkbox';
 import RadioButtons from './radioButton/radioButton';
 import Checker from './checker/checker';
+import ModalWindow from './modal/modal';
 
 function App() {
   const icons = {
@@ -117,6 +118,7 @@ function App() {
         </div>
 
       </div>
+      <div className='item'><ModalWindow /></div>
     </div>
 
   );
