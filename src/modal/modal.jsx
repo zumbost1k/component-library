@@ -1,36 +1,27 @@
-import React, { useState } from 'react';
-import Modal from 'react-modal';
+import React from 'react';
 import './modal.css'
 
 const ModalWindow = () => {
-    const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    const openModal = () => {
-        setModalIsOpen(true);
-    };
-
-    const closeModal = () => {
-        setModalIsOpen(false);
-    };
-    const modalContent = (
-        <div className='container'>
-            <h2 className='remove'>Remove item?</h2>
-            <p className='common'>Are you sure want to remove this item from your cart?</p>
-            <button className='sure' onClick={closeModal}><span className='sure-text'>Sure</span></button>
-            <button className='thanks' onClick={closeModal}><span className='thanks-text'>No, thanks</span></button>
-        </div>
-    );
     return (
         <div>
-            <button onClick={openModal}>open modal window</button>
-            <Modal className='modal-window' isOpen={modalIsOpen} onRequestClose={closeModal}>
-                {modalContent}
-            </Modal>
+            <button className='open'><a href='#openModal' className='open-text'>Открыть модальное окно</a></button>
+            <div id='openModal' className='modal'>
+                <div className='modal-dialog'>
+                    <div className='modal-body'>
+                        <h2 className='remove'>Remove item?</h2>
+                        <p className='common'>Are you sure want to remove this item from your cart?</p>
+                        <a href='#close' title='Close' className='close' >
+                            <button className='sure'><span className='sure-text'>Sure</span></button>
+                        </a>
+                        <a href='#close' title='Close' className='close' >
+                            <button className='thanks'><span className='thanks-text'>No, thanks</span></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     );
-
-
-
 }
 
 export default ModalWindow
