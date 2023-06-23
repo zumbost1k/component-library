@@ -5,10 +5,12 @@
 }
 
 .body {
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.item {
+.ui-item {
+    flex: .5;
     border: 1px solid black;
     padding: 50px;
     position: relative;

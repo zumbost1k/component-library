@@ -6,6 +6,8 @@ import './app.css'
 import Input from './input/input';
 import CheckBox from './checkbox/checkbox';
 import RadioButtons from './radioButton/radioButton';
+import Checker from './checker/checker';
+import ModalWindow from './modal/modal';
 
 function App() {
   const icons = {
@@ -24,7 +26,9 @@ function App() {
   const [type, setType] = useState('text')
   const [isDisabledCheckBox, setIsDisabledCheckBox] = useState(false)
   const [isChecked, setIsChecked] = useState(false)
-  const [isRadioDisabled,setIsRadioDisabled]=useState(false)
+  const [isRadioDisabled, setIsRadioDisabled] = useState(false)
+  const [isCheckDisabled, setIsCheckDisabled] = useState(false)
+  const [isCheckedBox, setIsCheckedBox] = useState(false)
   const isError = useMemo(() => {
     if (value.length < 20) {
       return false
@@ -34,7 +38,7 @@ function App() {
   )
   return (
     <div className='body' >
-      <div className='item'>
+      <div className='ui-item'>
         <Button color={color} size={size} Icon={icons[icon]} iconPosition={iconPosition} disabled={disabled} />
         <br />
         <form className='myForm'>
@@ -67,7 +71,7 @@ function App() {
           </select>
         </form>
       </div>
-      <div className='item'>
+      <div className='ui-item'>
         <Input value={value} setValue={setValue} error={isError} disabled={inputDisabled} label={label} caption={caption} type={type} />
         <br />
         <form className='myForm'>
@@ -90,18 +94,31 @@ function App() {
           </select>
         </form>
       </div>
-      <div className='item'>
+      <div className='ui-item'>
         <CheckBox isDisable={isDisabledCheckBox} checked={isChecked} onChange={setIsChecked} />
         <div>
           <input type='checkbox' defaultChecked={false} onClick={() => setIsDisabledCheckBox(!isDisabledCheckBox)} />
           <label>disabled</label>
         </div>
       </div>
-      <div className='item'>
-        <RadioButtons isDisabled={isRadioDisabled}/>
+      <div className='ui-item'>
+        <RadioButtons isDisabled={isRadioDisabled} />
         <input type='checkbox' defaultChecked={false} onClick={() => setIsRadioDisabled(!isRadioDisabled)} />
-          <label>disabled</label>
+        <label>disabled</label>
       </div>
+      <div className='ui-item'>
+        <Checker isDisabled={isCheckDisabled} checked={isCheckedBox} onChange={setIsCheckedBox} />
+        <div>
+          <input type='checkbox' value={isCheckedBox} defaultChecked={false} onClick={() => setIsCheckedBox(!isCheckedBox)} />
+          <label>checked</label>
+        </div>
+        <div>
+          <input type='checkbox' defaultChecked={false} onClick={() => setIsCheckDisabled(!isCheckDisabled)} />
+          <label>disabled</label>
+        </div>
+
+      </div>
+      <div className='ui-item'><ModalWindow /></div>
     </div>
 
   );
