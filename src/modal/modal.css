@@ -1,0 +1,114 @@
+.remove {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #090A0A;
+    margin: 0;
+    padding-top: 24px;
+}
+
+.common {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #72777A;
+    padding: 8px 24px;
+    margin: 0;
+}
+
+.sure {
+    cursor: pointer;
+    margin-top: 24px;
+    background: #6B4EFF;
+    border-radius: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+}
+
+.sure-text {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #FFFFFF;
+    padding: 16px 120px;
+}
+
+.thanks {
+    cursor: pointer;
+    margin-top: 24px;
+    border: 0;
+    background-color: white;
+}
+
+.thanks-text {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #6B4EFF;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    opacity: 0;
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+}
+
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+    overflow-y: auto;
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+
+.close {
+    text-decoration: none;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 327px;
+    height: 270px;
+    background-color: white;
+    border-radius: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+.open {
+    text-decoration: none;
+    background: #6B4EFF;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.open-text {
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 20px;
+}
