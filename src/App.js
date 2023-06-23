@@ -38,7 +38,7 @@ function App() {
   )
   return (
     <div className='body' >
-      <div className='item'>
+      <div className='ui-item'>
         <Button color={color} size={size} Icon={icons[icon]} iconPosition={iconPosition} disabled={disabled} />
         <br />
         <form className='myForm'>
@@ -71,7 +71,7 @@ function App() {
           </select>
         </form>
       </div>
-      <div className='item'>
+      <div className='ui-item'>
         <Input value={value} setValue={setValue} error={isError} disabled={inputDisabled} label={label} caption={caption} type={type} />
         <br />
         <form className='myForm'>
@@ -94,19 +94,19 @@ function App() {
           </select>
         </form>
       </div>
-      <div className='item'>
+      <div className='ui-item'>
         <CheckBox isDisable={isDisabledCheckBox} checked={isChecked} onChange={setIsChecked} />
         <div>
           <input type='checkbox' defaultChecked={false} onClick={() => setIsDisabledCheckBox(!isDisabledCheckBox)} />
           <label>disabled</label>
         </div>
       </div>
-      <div className='item'>
+      <div className='ui-item'>
         <RadioButtons isDisabled={isRadioDisabled} />
         <input type='checkbox' defaultChecked={false} onClick={() => setIsRadioDisabled(!isRadioDisabled)} />
         <label>disabled</label>
       </div>
-      <div className='item'>
+      <div className='ui-item'>
         <Checker isDisabled={isCheckDisabled} checked={isCheckedBox} onChange={setIsCheckedBox} />
         <div>
           <input type='checkbox' value={isCheckedBox} defaultChecked={false} onClick={() => setIsCheckedBox(!isCheckedBox)} />
@@ -118,9 +118,8 @@ function App() {
         </div>
 
       </div>
-      <div className='item'><ModalWindow /></div>
-      <div className='item'><Range min={0}
-        max={1000} /></div>
+      <div className='ui-item'><ModalWindow /></div>
+      <div className='ui-item'><Range /> </div>
     </div>
 
   );
