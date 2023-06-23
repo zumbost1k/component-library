@@ -8,7 +8,7 @@ import CheckBox from './checkbox/checkbox';
 import RadioButtons from './radioButton/radioButton';
 import Checker from './checker/checker';
 import ModalWindow from './modal/modal';
-
+import Range from './range/range';
 function App() {
   const icons = {
     chatIcon: Chat,
@@ -119,6 +119,8 @@ function App() {
 
       </div>
       <div className='item'><ModalWindow /></div>
+      <div className='item'><Range min={0}
+        max={1000} /></div>
     </div>
 
   );
