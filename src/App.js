@@ -29,6 +29,7 @@ function App() {
   const [isRadioDisabled, setIsRadioDisabled] = useState(false)
   const [isCheckDisabled, setIsCheckDisabled] = useState(false)
   const [isCheckedBox, setIsCheckedBox] = useState(false)
+  const [chekedRadio, setChekedRadio] = useState(false)
   const isError = useMemo(() => {
     if (value.length < 20) {
       return false
@@ -102,7 +103,9 @@ function App() {
         </div>
       </div>
       <div className='ui-item'>
-        <RadioButtons isDisabled={isRadioDisabled} />
+        <RadioButtons isDisabled={isRadioDisabled} chekedRadio={chekedRadio} change={setChekedRadio}/>
+        <input type='checkbox' defaultChecked={false} onClick={() => setChekedRadio(!chekedRadio)} />
+        <br /> <label>chek state</label><br />
         <input type='checkbox' defaultChecked={false} onClick={() => setIsRadioDisabled(!isRadioDisabled)} />
         <label>disabled</label>
       </div>
