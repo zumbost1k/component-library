@@ -8,7 +8,7 @@ import CheckBox from './checkbox/checkbox';
 import RadioButtons from './radioButton/radioButton';
 import Checker from './checker/checker';
 import ModalWindow from './modal/modal';
-
+import Range from './range/range';
 function App() {
   const icons = {
     chatIcon: Chat,
@@ -29,7 +29,6 @@ function App() {
   const [isRadioDisabled, setIsRadioDisabled] = useState(false)
   const [isCheckDisabled, setIsCheckDisabled] = useState(false)
   const [isCheckedBox, setIsCheckedBox] = useState(false)
-  const [chekedRadio, setChekedRadio] = useState(false)
   const isError = useMemo(() => {
     if (value.length < 20) {
       return false
@@ -103,9 +102,7 @@ function App() {
         </div>
       </div>
       <div className='ui-item'>
-        <RadioButtons isDisabled={isRadioDisabled} chekedRadio={chekedRadio} change={setChekedRadio} />
-        <input type='checkbox' defaultChecked={false} onClick={() => setChekedRadio(!chekedRadio)} />
-        <br /> <label>chek state</label><br />
+        <RadioButtons isDisabled={isRadioDisabled} />
         <input type='checkbox' defaultChecked={false} onClick={() => setIsRadioDisabled(!isRadioDisabled)} />
         <label>disabled</label>
       </div>
@@ -122,6 +119,7 @@ function App() {
 
       </div>
       <div className='ui-item'><ModalWindow /></div>
+      <div className='ui-item'><Range /> </div>
     </div>
 
   );
