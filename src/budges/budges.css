@@ -1,0 +1,32 @@
+.budge {
+    margin: 20px;
+    padding: 8px 16px;
+    border-radius: 28px;
+    border: 0px;
+    cursor: pointer;
+    user-select: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.success {
+    color: #198155;
+    background: #ECFCE5;
+}
+
+.alert{
+    color: #D3180C;
+    background: #FFE5E5;
+}
+
+.warning{
+    color: #A05E03;
+    background: #FFEFD7;
+}
+
+.info{
+    color: #0065D0;
+    background: #C9F0FF;
+}
