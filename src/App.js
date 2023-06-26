@@ -103,7 +103,7 @@ function App() {
         </div>
       </div>
       <div className='ui-item'>
-        <RadioButtons isDisabled={isRadioDisabled} chekedRadio={chekedRadio} change={setChekedRadio}/>
+        <RadioButtons isDisabled={isRadioDisabled} chekedRadio={chekedRadio} change={setChekedRadio} />
         <input type='checkbox' defaultChecked={false} onClick={() => setChekedRadio(!chekedRadio)} />
         <br /> <label>chek state</label><br />
         <input type='checkbox' defaultChecked={false} onClick={() => setIsRadioDisabled(!isRadioDisabled)} />
