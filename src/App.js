@@ -9,7 +9,7 @@ import RadioButtons from './radioButton/radioButton';
 import Checker from './checker/checker';
 import ModalWindow from './modal/modal';
 import Range from './range/range';
-import Budge from './budges/budges';
+import Badge from './badge/badges';
 function App() {
   const icons = {
     chatIcon: Chat,
@@ -30,7 +30,7 @@ function App() {
   const [isRadioDisabled, setIsRadioDisabled] = useState(false)
   const [isCheckDisabled, setIsCheckDisabled] = useState(false)
   const [isCheckedBox, setIsCheckedBox] = useState(false)
-  const [budgesType, setBudgesType] = useState('success')
+  const [badgeType, setBadgeType] = useState('success')
   const isError = useMemo(() => {
     if (value.length < 20) {
       return false
@@ -123,8 +123,8 @@ function App() {
       <div className='ui-item'><ModalWindow /></div>
       <div className='ui-item'><Range /> </div>
       <div className='ui-item'>
-        <Budge type={budgesType} />
-        <select onChange={newBudgesType => { setBudgesType(newBudgesType.target.value) }}>
+        <Badge type={badgeType} />
+        <select onChange={newBadgeType => { setBadgeType(newBadgeType.target.value) }}>
           <option value='success'>Success</option>
           <option value='alert'>Alert</option>
           <option value='warning'>Warning</option>
