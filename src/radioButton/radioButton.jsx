@@ -1,13 +1,16 @@
-import React from 'react';
+import React from "react";
 import './radioButton.css'
 
-const RadioButtons = ({ isDisabled, chekedRadio, change }) => {
+const RadioButtons = ({ isDisabled }) => {
     return (
         <div>
-            <div className='button'>
+            <div className="buttons">
                 <div>
-                    <input className='custom-radio' checked={chekedRadio} onChange={e => change(!chekedRadio)} type='radio' id='contactChoice' name='contact' disabled={isDisabled} />
-                    <label for='contactChoice'></label>
+                    <input className="custom-radio" type="radio" id="contactChoice1" name="contact" disabled={isDisabled} />
+                    <label for="contactChoice1"></label></div>
+                <div>
+                    <input className="custom-radio" type="radio" id="contactChoice2" name="contact" disabled={isDisabled} />
+                    <label for="contactChoice2"></label>
                 </div>
             </div>
 

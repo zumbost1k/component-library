@@ -1,4 +1,4 @@
-.button {
+.buttons {
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -33,7 +33,6 @@
 }
 
 .custom-radio:checked+label::before {
-    margin-top: -.05px;
     border-color: #6B4EFF;
     background-color: #6B4EFF;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4' fill='%23fff'/%3e%3c/svg%3e");
